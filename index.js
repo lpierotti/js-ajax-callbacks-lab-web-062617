@@ -13,7 +13,7 @@ function searchRepositories(){
  			method: 'GET',
  			success: function(repos) {
  				console.log(repos)
- 				const repoList = repos.items.map(r => `<li> ${r.name}, ${r.description}, ${r.html_url}, ${r.owner.login}, ${r.owner.avatar_url}, ${r.owner.url} <a href="#" data-repository="${r.name}" data-owner="${r.owner.login}" onclick="showCommits(this)">Show Commits</a> </li>`).join("")
+ 				const repoList = repos.items.map(r => `<li> ${r.name}, ${r.description}, ${r.html_url}, ${r.owner.login}, <img height="35px" src="${r.owner.avatar_url}">, ${r.owner.url} <a href="#" data-repository="${r.name}" data-owner="${r.owner.login}" onclick="showCommits(this)">Show Commits</a> </li>`).join("")
  				document.getElementById('results').innerHTML =  `
  					<ul>
  						${repoList}
